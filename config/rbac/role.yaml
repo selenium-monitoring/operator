@@ -1,0 +1,106 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - '*'
+  resources:
+  - configmaps
+  verbs:
+  - create
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - '*'
+  resources:
+  - cronjobs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - '*'
+  resources:
+  - rolebindings
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - '*'
+  resources:
+  - serviceaccounts
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - selenium.mliviusz.com
+  resources:
+  - seleniumtestresults
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - selenium.mliviusz.com
+  resources:
+  - seleniumtestresults/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - selenium.mliviusz.com
+  resources:
+  - seleniumtestresults/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - selenium.mliviusz.com
+  resources:
+  - seleniumtests
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - selenium.mliviusz.com
+  resources:
+  - seleniumtests/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - selenium.mliviusz.com
+  resources:
+  - seleniumtests/status
+  verbs:
+  - get
+  - patch
+  - update
